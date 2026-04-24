@@ -1,12 +1,13 @@
 import GlobalStyle from './components/GlobalStyle';
 import SearchForm from './components/SearchForm';
+import JobList from './components/JobList';
 
 function App() {
   return (
     <>
       <GlobalStyle />
       <SearchForm />
-      {/* A lista de vagas será adicionada no próximo commit */}
+      <JobList />
     </>
   );
 }
