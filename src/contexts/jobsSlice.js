@@ -6,7 +6,7 @@ export const fetchJobs = createAsyncThunk(
   'jobs/fetchJobs',
   async (searchTerm, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`https://remotive.com/api/remote-jobs`);
+      const response = await axios.get(`https://remotive.com/api/remote-jobs?search=${searchTerm}`);
       
       // A Remotive API atualmente ignora o parâmetro de busca e retorna apenas as últimas 20 vagas.
       // Para o projeto funcionar corretamente, fazemos o filtro localmente:
