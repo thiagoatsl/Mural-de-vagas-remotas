@@ -1,6 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// Dicionário simples para traduzir termos em português para inglês na busca
+const ptToEnMap = {
+  "engenheiro": "engineer",
+  "engenheira": "engineer",
+  "desenvolvedor": "developer",
+  "desenvolvedora": "developer",
+  "programador": "developer",
+  "dados": "data",
+  "gerente": "manager",
+  "vendas": "sales",
+  "suporte": "support",
+  "redator": "writer",
+  "analista": "analyst",
+  "estagio": "intern",
+  "estágio": "intern",
+  "produto": "product",
+  "projetos": "project"
+};
+
 // Action assíncrona para buscar as vagas
 export const fetchJobs = createAsyncThunk(
   'jobs/fetchJobs',
@@ -8,12 +27,19 @@ export const fetchJobs = createAsyncThunk(
     try {
       const response = await axios.get(`https://remotive.com/api/remote-jobs?search=${searchTerm}`);
       
-      // A Remotive API atualmente ignora o parâmetro de busca e retorna apenas as últimas 20 vagas.
-      // Para o projeto funcionar corretamente, fazemos o filtro localmente:
-      const filteredJobs = response.data.jobs.filter(job => 
-        job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        job.company_name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+      // Busca pelo termo original ou pelo termo traduzido
+      const searchLower = searchTerm.toLowerCase().trim();
+      const translatedTerm = ptToEnMap[searchLower] || searchLower;
+
+      const filteredJobs = response.data.jobs.filter(job => {
+        const titleLower = job.title.toLowerCase();
+        const companyLower = job.company_name.toLowerCase();
+        
+        return titleLower.includes(searchLower) || 
+               titleLower.includes(translatedTerm) ||
+               companyLower.includes(searchLower) || 
+               companyLower.includes(translatedTerm);
+      });
       
       return filteredJobs;
     } catch (error) {
