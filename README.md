@@ -2,7 +2,7 @@
 
 Um Mural de Vagas Remotas (Single Page Application) desenvolvido em React para o Projeto 1 da disciplina de Programação Web Fullstack. O projeto consome dados reais de vagas da **Remotive API** e permite busca por termo (tecnologia, cargo, empresa).
 
-🔗 **Acesse o projeto online:** [https://mural-de-vagas-remotas.vercel.app] *(coloque o link depois de hospedar)*
+🔗 **Acesse o projeto online:** [https://mural-de-vagas-remotas-rose.vercel.app] 
 
 ## 🛠 Tecnologias e Requisitos Atendidos
 
