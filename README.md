@@ -1,16 +1,45 @@
-# React + Vite
+# 🚀 Mural de Vagas Remotas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um Mural de Vagas Remotas (Single Page Application) desenvolvido em React para o Projeto 1 da disciplina de Programação Web Fullstack. O projeto consome dados reais de vagas da **Remotive API** e permite busca por termo (tecnologia, cargo, empresa).
 
-Currently, two official plugins are available:
+🔗 **Acesse o projeto online:** [https://mural-de-vagas-remotas.vercel.app] *(coloque o link depois de hospedar)*
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Tecnologias e Requisitos Atendidos
 
-## React Compiler
+Este projeto foi desenvolvido cumprindo todas as diretrizes propostas na avaliação:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **SPA (Single Page Application):** Criado utilizando **React.js** com a ferramenta Vite.
+*   **Consumo de API JSON Aberta:** Integração com a [Remotive API](https://remotive.com/api/remote-jobs), enviando parâmetros de busca diretamente via Axios.
+*   **Hook/Funcionalidade Escolhida:** Foi selecionado o **`react-redux`** (Redux Toolkit) para o gerenciamento de estado global da aplicação (armazenando a lista de vagas e os status de carregamento).
+*   **Biblioteca Externa Escolhida:** Interface estilizada utilizando **`styled-components`** e requisições HTTP gerenciadas com **`axios`**.
+*   **Estrutura do Projeto:** Códigos-fontes rigorosamente separados nas pastas `src/components` e `src/contexts`.
+*   **Validações:** O formulário obriga o preenchimento antes do envio para a API e apresenta as mensagens de erro na tela de forma clara (antes e depois do envio).
 
-## Expanding the ESLint configuration
+## 💻 Como rodar o projeto localmente
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Para rodar este projeto na sua máquina, você precisará do [Node.js](https://nodejs.org/) instalado.
+
+1. Clone o repositório ou baixe o arquivo `.zip`:
+```bash
+git clone https://github.com/thiagoatsl/Mural-de-vagas-remotas
+```
+
+2. Acesse a pasta do projeto:
+```bash
+cd Mural-de-vagas-remotas-main
+```
+
+3. Instale as dependências do projeto:
+```bash
+npm install
+```
+
+4. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
+
+5. O projeto abrirá no seu navegador no endereço: `http://localhost:5173`
+
+---
+*Desenvolvido por Augusto Thiago e Gabriel Sarti.*
